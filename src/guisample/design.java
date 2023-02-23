@@ -19,7 +19,7 @@ public class design extends javax.swing.JFrame {
     }
     Color dashcolors = new Color(204, 204, 204);
     Color headers = new Color(153, 153, 153);
-    Color bodycolors = new Color(102, 102, 102);
+    Color bodycolors = new Color(0, 102, 153);
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,6 +33,10 @@ public class design extends javax.swing.JFrame {
         dashcolor = new javax.swing.JPanel();
         dashpane = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        userpane = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        reportpane = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
         bodycolor = new javax.swing.JDesktopPane();
 
@@ -48,33 +52,81 @@ public class design extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 dashpaneMouseEntered(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                dashpaneMouseExited(evt);
+            }
         });
         dashpane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("DASHBOARD");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        dashpane.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 14, 120, 20));
+        dashpane.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 120, -1));
+
+        userpane.setBackground(new java.awt.Color(204, 204, 204));
+        userpane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                userpaneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                userpaneMouseExited(evt);
+            }
+        });
+        userpane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("USER PAGE ");
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        userpane.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 120, -1));
+
+        reportpane.setBackground(new java.awt.Color(204, 204, 204));
+        reportpane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                reportpaneMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                reportpaneMouseExited(evt);
+            }
+        });
+        reportpane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("REPORTS");
+        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        reportpane.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 120, -1));
 
         javax.swing.GroupLayout dashcolorLayout = new javax.swing.GroupLayout(dashcolor);
         dashcolor.setLayout(dashcolorLayout);
         dashcolorLayout.setHorizontalGroup(
             dashcolorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(dashpane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(userpane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(reportpane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         dashcolorLayout.setVerticalGroup(
             dashcolorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dashcolorLayout.createSequentialGroup()
-                .addGap(101, 101, 101)
+                .addGap(70, 70, 70)
                 .addComponent(dashpane, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(265, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(userpane, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(reportpane, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(196, Short.MAX_VALUE))
         );
 
         jPanel1.add(dashcolor);
         dashcolor.setBounds(0, 0, 120, 410);
 
         header.setBackground(new java.awt.Color(153, 153, 153));
+        header.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                headerMouseEntered(evt);
+            }
+        });
 
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
         header.setLayout(headerLayout);
@@ -90,7 +142,7 @@ public class design extends javax.swing.JFrame {
         jPanel1.add(header);
         header.setBounds(120, 0, 620, 40);
 
-        bodycolor.setBackground(new java.awt.Color(102, 102, 102));
+        bodycolor.setBackground(new java.awt.Color(0, 102, 153));
 
         javax.swing.GroupLayout bodycolorLayout = new javax.swing.GroupLayout(bodycolor);
         bodycolor.setLayout(bodycolorLayout);
@@ -124,8 +176,32 @@ public class design extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void dashpaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpaneMouseEntered
-        dashpane.setBackground(bodycolor);
+        dashpane.setBackground(bodycolors);
     }//GEN-LAST:event_dashpaneMouseEntered
+
+    private void dashpaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpaneMouseExited
+       dashpane.setBackground(dashcolors);
+    }//GEN-LAST:event_dashpaneMouseExited
+
+    private void userpaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseEntered
+        userpane.setBackground(bodycolors);
+    }//GEN-LAST:event_userpaneMouseEntered
+
+    private void userpaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseExited
+        userpane.setBackground(dashcolors);
+    }//GEN-LAST:event_userpaneMouseExited
+
+    private void headerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_headerMouseEntered
+
+    private void reportpaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportpaneMouseEntered
+      reportpane.setBackground(bodycolors);
+    }//GEN-LAST:event_reportpaneMouseEntered
+
+    private void reportpaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportpaneMouseExited
+       reportpane.setBackground(dashcolors);
+    }//GEN-LAST:event_reportpaneMouseExited
 
     /**
      * @param args the command line arguments
@@ -168,6 +244,10 @@ public class design extends javax.swing.JFrame {
     private javax.swing.JPanel dashpane;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel reportpane;
+    private javax.swing.JPanel userpane;
     // End of variables declaration//GEN-END:variables
 }
