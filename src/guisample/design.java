@@ -5,10 +5,9 @@
  */
 package Guisample;
 import java.awt.Color;
-/**
- *
- * @author SCC COMPLAB
- */
+import internalPages.*;
+
+
 public class design extends javax.swing.JFrame {
 
     /**
@@ -19,7 +18,7 @@ public class design extends javax.swing.JFrame {
     }
     Color dashcolors = new Color(204, 204, 204);
     Color headers = new Color(153, 153, 153);
-    Color bodycolors = new Color(0, 102, 153);
+    Color bodycolors = new Color(51, 51, 51);
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,7 +37,7 @@ public class design extends javax.swing.JFrame {
         reportpane = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
-        bodycolor = new javax.swing.JDesktopPane();
+        maindesktop = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,6 +65,9 @@ public class design extends javax.swing.JFrame {
 
         userpane.setBackground(new java.awt.Color(204, 204, 204));
         userpane.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userpaneMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 userpaneMouseEntered(evt);
             }
@@ -96,7 +98,7 @@ public class design extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("REPORTS");
         jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        reportpane.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 120, -1));
+        reportpane.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, -1));
 
         javax.swing.GroupLayout dashcolorLayout = new javax.swing.GroupLayout(dashcolor);
         dashcolor.setLayout(dashcolorLayout);
@@ -109,13 +111,13 @@ public class design extends javax.swing.JFrame {
         dashcolorLayout.setVerticalGroup(
             dashcolorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dashcolorLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
+                .addGap(120, 120, 120)
                 .addComponent(dashpane, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(userpane, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(reportpane, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(196, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(reportpane, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(147, Short.MAX_VALUE))
         );
 
         jPanel1.add(dashcolor);
@@ -142,21 +144,21 @@ public class design extends javax.swing.JFrame {
         jPanel1.add(header);
         header.setBounds(120, 0, 620, 40);
 
-        bodycolor.setBackground(new java.awt.Color(0, 102, 153));
+        maindesktop.setBackground(new java.awt.Color(51, 51, 51));
 
-        javax.swing.GroupLayout bodycolorLayout = new javax.swing.GroupLayout(bodycolor);
-        bodycolor.setLayout(bodycolorLayout);
-        bodycolorLayout.setHorizontalGroup(
-            bodycolorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout maindesktopLayout = new javax.swing.GroupLayout(maindesktop);
+        maindesktop.setLayout(maindesktopLayout);
+        maindesktopLayout.setHorizontalGroup(
+            maindesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 620, Short.MAX_VALUE)
         );
-        bodycolorLayout.setVerticalGroup(
-            bodycolorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        maindesktopLayout.setVerticalGroup(
+            maindesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 370, Short.MAX_VALUE)
         );
 
-        jPanel1.add(bodycolor);
-        bodycolor.setBounds(120, 40, 620, 370);
+        jPanel1.add(maindesktop);
+        maindesktop.setBounds(120, 40, 620, 370);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -203,6 +205,11 @@ public class design extends javax.swing.JFrame {
        reportpane.setBackground(dashcolors);
     }//GEN-LAST:event_reportpaneMouseExited
 
+    private void userpaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpaneMouseClicked
+       userPage up = new userPage();
+       maindesktop.add(up).setVisible(true);
+    }//GEN-LAST:event_userpaneMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -239,7 +246,6 @@ public class design extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane bodycolor;
     private javax.swing.JPanel dashcolor;
     private javax.swing.JPanel dashpane;
     private javax.swing.JPanel header;
@@ -247,6 +253,7 @@ public class design extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JDesktopPane maindesktop;
     private javax.swing.JPanel reportpane;
     private javax.swing.JPanel userpane;
     // End of variables declaration//GEN-END:variables
