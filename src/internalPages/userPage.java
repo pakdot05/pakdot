@@ -33,7 +33,7 @@ public class userPage extends javax.swing.JInternalFrame {
 
         setPreferredSize(new java.awt.Dimension(620, 370));
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Nirmala UI", 1, 24)); // NOI18N
